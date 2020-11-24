@@ -190,6 +190,12 @@ namespace Nez
 		}
 
 
+		public bool IsLeftStickLeftReleased(float deadzone = Input.DEFAULT_DEADZONE)
+		{
+			return _currentState.ThumbSticks.Left.X > -deadzone && _previousState.ThumbSticks.Left.X < -deadzone;
+		}
+
+
 		public bool IsLeftStickRight(float deadzone = Input.DEFAULT_DEADZONE)
 		{
 			return _currentState.ThumbSticks.Left.X > deadzone;
@@ -204,6 +210,12 @@ namespace Nez
 		public bool IsLeftStickRightPressed(float deadzone = Input.DEFAULT_DEADZONE)
 		{
 			return _currentState.ThumbSticks.Left.X > deadzone && _previousState.ThumbSticks.Left.X < deadzone;
+		}
+
+
+		public bool IsLeftStickRightReleased(float deadzone = Input.DEFAULT_DEADZONE)
+		{
+			return _currentState.ThumbSticks.Left.X < deadzone && _previousState.ThumbSticks.Left.X > deadzone;
 		}
 
 
@@ -224,6 +236,12 @@ namespace Nez
 		}
 
 
+		public bool IsLeftStickUpReleased(float deadzone = Input.DEFAULT_DEADZONE)
+		{
+			return _currentState.ThumbSticks.Left.Y < deadzone && _previousState.ThumbSticks.Left.Y > deadzone;
+		}
+
+
 		public bool IsLeftStickDown(float deadzone = Input.DEFAULT_DEADZONE)
 		{
 			return _currentState.ThumbSticks.Left.Y < -deadzone;
@@ -238,6 +256,12 @@ namespace Nez
 		public bool IsLeftStickDownPressed(float deadzone = Input.DEFAULT_DEADZONE)
 		{
 			return _currentState.ThumbSticks.Left.Y < -deadzone && _previousState.ThumbSticks.Left.Y > -deadzone;
+		}
+
+
+		public bool IsLeftStickDownReleased(float deadzone = Input.DEFAULT_DEADZONE)
+		{
+			return _currentState.ThumbSticks.Left.Y > -deadzone && _previousState.ThumbSticks.Left.Y < -deadzone;
 		}
 
 

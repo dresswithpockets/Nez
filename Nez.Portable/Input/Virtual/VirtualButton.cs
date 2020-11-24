@@ -461,7 +461,7 @@ namespace Nez
 			public override bool IsReleased => Input.GamePads[GamepadIndex].DpadRightReleased;
 		}
 
-
+		
 		public class GamePadDPadLeft : Node
 		{
 			public int GamepadIndex;
@@ -518,6 +518,96 @@ namespace Nez
 			public override bool IsReleased => Input.GamePads[GamepadIndex].DpadDownReleased;
 		}
 
+		#endregion
+		
+		
+		#region GamePad Left Stick
+		
+		
+		public class GamePadLeftStickLeft : Node
+		{
+			public int GamepadIndex;
+			public float Deadzone;
+
+
+			public GamePadLeftStickLeft(int gamepadIndex, float deadzone)
+			{
+				GamepadIndex = gamepadIndex;
+				Deadzone = deadzone;
+			}
+
+
+			public override bool IsDown => Input.GamePads[GamepadIndex].IsLeftStickLeft(Deadzone);
+
+			public override bool IsPressed => Input.GamePads[GamepadIndex].IsLeftStickLeftPressed(Deadzone);
+
+			public override bool IsReleased => Input.GamePads[GamepadIndex].IsLeftStickLeftReleased(Deadzone);
+		}
+		
+		
+		public class GamePadLeftStickRight : Node
+		{
+			public int GamepadIndex;
+			public float Deadzone;
+
+
+			public GamePadLeftStickRight(int gamepadIndex, float deadzone)
+			{
+				GamepadIndex = gamepadIndex;
+				Deadzone = deadzone;
+			}
+
+
+			public override bool IsDown => Input.GamePads[GamepadIndex].IsLeftStickRight(Deadzone);
+
+			public override bool IsPressed => Input.GamePads[GamepadIndex].IsLeftStickRightPressed(Deadzone);
+
+			public override bool IsReleased => Input.GamePads[GamepadIndex].IsLeftStickRightReleased(Deadzone);
+		}
+		
+		
+		public class GamePadLeftStickUp : Node
+		{
+			public int GamepadIndex;
+			public float Deadzone;
+
+
+			public GamePadLeftStickUp(int gamepadIndex, float deadzone)
+			{
+				GamepadIndex = gamepadIndex;
+				Deadzone = deadzone;
+			}
+
+
+			public override bool IsDown => Input.GamePads[GamepadIndex].IsLeftStickUp(Deadzone);
+
+			public override bool IsPressed => Input.GamePads[GamepadIndex].IsLeftStickUpPressed(Deadzone);
+
+			public override bool IsReleased => Input.GamePads[GamepadIndex].IsLeftStickUpReleased(Deadzone);
+		}
+		
+		
+		public class GamePadLeftStickDown : Node
+		{
+			public int GamepadIndex;
+			public float Deadzone;
+
+
+			public GamePadLeftStickDown(int gamepadIndex, float deadzone)
+			{
+				GamepadIndex = gamepadIndex;
+				Deadzone = deadzone;
+			}
+
+
+			public override bool IsDown => Input.GamePads[GamepadIndex].IsLeftStickDown(Deadzone);
+
+			public override bool IsPressed => Input.GamePads[GamepadIndex].IsLeftStickDownPressed(Deadzone);
+
+			public override bool IsReleased => Input.GamePads[GamepadIndex].IsLeftStickDownReleased(Deadzone);
+		}
+		
+		
 		#endregion
 
 
