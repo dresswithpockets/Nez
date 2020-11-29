@@ -173,7 +173,8 @@ namespace Nez.Systems
 					return spriteAtlas;
 			}
 
-			var atlas = SpriteAtlasLoader.ParseSpriteAtlas(name, premultiplyAlpha);
+			var atlasData = SpriteAtlasLoader.ParseSpriteAtlasData($"Content/{name}.atlas");
+			var atlas = atlasData.AsSpriteAtlas(ReadAsset<Texture2D>(name, null));
 
 			LoadedAssets.Add(name, atlas);
 			DisposableAssets.Add(atlas);
