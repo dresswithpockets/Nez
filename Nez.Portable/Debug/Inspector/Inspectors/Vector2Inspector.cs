@@ -18,7 +18,8 @@ namespace Nez
 
 			var labelX = new Label("x", skin);
 			_textFieldX = new TextField(value.X.ToString(CultureInfo.InvariantCulture), skin);
-			_textFieldX.SetTextFieldFilter(new FloatFilter()).SetPreferredWidth(50);
+			_textFieldX.SetScale(2f);
+			_textFieldX.SetTextFieldFilter(new FloatFilter()).SetPreferredWidth(100);
 			_textFieldX.OnTextChanged += (field, str) =>
 			{
 				float newX;
@@ -32,7 +33,8 @@ namespace Nez
 
 			var labelY = new Label("y", skin);
 			_textFieldY = new TextField(value.Y.ToString(CultureInfo.InvariantCulture), skin);
-			_textFieldY.SetTextFieldFilter(new FloatFilter()).SetPreferredWidth(50);
+			_textFieldY.SetScale(2f);
+			_textFieldY.SetTextFieldFilter(new FloatFilter()).SetPreferredWidth(100);
 			_textFieldY.OnTextChanged += (field, str) =>
 			{
 				float newY;

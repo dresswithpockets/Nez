@@ -338,7 +338,7 @@ namespace Nez
 		/// <param name="skin">Skin.</param>
 		protected Label CreateNameLabel(Table table, Skin skin, float leftCellWidth = -1)
 		{
-			var label = new Label(_name, skin);
+			var label = new Label(_name, skin).SetFontScale(2f);
 			label.SetTouchable(Touchable.Enabled);
 
 			// set a width on the cell so long labels dont cause issues if we have a leftCellWidth set

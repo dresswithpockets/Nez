@@ -36,7 +36,7 @@ namespace Nez
 		public void Initialize(Table table, Skin skin, float leftCellWidth)
 		{
 			table.GetRowDefaults().SetPadTop(10);
-			table.Add(Name.Replace("PostProcessor", string.Empty)).GetElement<Label>().SetFontScale(1f)
+			table.Add(Name.Replace("PostProcessor", string.Empty)).GetElement<Label>().SetFontScale(2f)
 				.SetFontColor(new Color(241, 156, 0));
 
 			// if we have a component, stick a bool for enabled here

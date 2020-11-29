@@ -18,7 +18,7 @@ namespace Nez
 			_checkbox.IsChecked = GetValue<bool>();
 			_checkbox.OnChanged += newValue => { SetValue(newValue); };
 
-			table.Add(label).Width(135);
+			table.Add().Width(135);
 			table.Add(_checkbox);
 		}
 

@@ -18,7 +18,7 @@ namespace Nez.Console
 		/// <summary>
 		/// controls the scale of the console
 		/// </summary>
-		public static float RenderScale = 1f;
+		public static float RenderScale = 2f;
 
 		/// <summary>
 		/// bind any custom Actions you would like to function keys
@@ -31,7 +31,7 @@ namespace Nez.Console
 		const float OPACITY = 0.65f;
 
 		// render constants
-		const int LINE_HEIGHT = 10;
+		const int LINE_HEIGHT = 12;
 		const int TEXT_PADDING_X = 5;
 		const int TEXT_PADDING_Y = 4;
 

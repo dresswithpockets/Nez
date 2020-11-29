@@ -153,7 +153,7 @@ namespace Nez
 
 			// force a validate which will layout the ScrollPane and populate the proper scrollBarWidth
 			_scrollPane.Validate();
-			_scrollPane.SetSize(295 + _scrollPane.GetScrollBarWidth(), Screen.Height);
+			_scrollPane.SetSize(395 + _scrollPane.GetScrollBarWidth(), Screen.Height);
 		}
 
 
