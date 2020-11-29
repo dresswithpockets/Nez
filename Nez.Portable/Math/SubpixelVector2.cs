@@ -28,5 +28,10 @@ namespace Nez
 			_x.Reset();
 			_y.Reset();
 		}
+
+		public void ResetY()
+		{
+			_y.Reset();
+		}
 	}
 }
