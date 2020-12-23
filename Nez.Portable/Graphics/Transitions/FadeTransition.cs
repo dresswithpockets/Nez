@@ -95,7 +95,7 @@ namespace Nez
 			batcher.Begin(BlendState.NonPremultiplied, Core.DefaultSamplerState, DepthStencilState.None, null);
 
 			// we only render the previousSceneRender while fading to _color. It will be null after that.
-			if (!_isNewSceneLoaded)
+			if (!IsNewSceneLoaded)
 				batcher.Draw(PreviousSceneRender, _destinationRect, Color.White);
 
 			batcher.Draw(_overlayTexture, new Rectangle(0, 0, Screen.Width, Screen.Height), _color);

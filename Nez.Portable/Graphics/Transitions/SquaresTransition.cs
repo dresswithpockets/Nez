@@ -115,7 +115,7 @@ namespace Nez
 			batcher.Begin(BlendState.NonPremultiplied, Core.DefaultSamplerState, DepthStencilState.None, null, _squaresEffect);
 
 			// we only render the previousSceneRender while populating the squares
-			if (!_isNewSceneLoaded)
+			if (!IsNewSceneLoaded)
 				batcher.Draw(PreviousSceneRender, _destinationRect, Color.White);
 			else
 				batcher.Draw(_overlayTexture, new Rectangle(0, 0, Screen.Width, Screen.Height), Color.Transparent);

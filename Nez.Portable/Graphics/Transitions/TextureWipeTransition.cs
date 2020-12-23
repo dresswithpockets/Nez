@@ -122,7 +122,7 @@ namespace Nez
 				_textureWipeEffect);
 
 			// we only render the previousSceneRender until we load up the new Scene
-			if (!_isNewSceneLoaded)
+			if (!IsNewSceneLoaded)
 				batcher.Draw(PreviousSceneRender, _destinationRect, Color.White);
 			else
 				batcher.Draw(_overlayTexture, new Rectangle(0, 0, Screen.Width, Screen.Height),

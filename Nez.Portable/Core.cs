@@ -252,7 +252,7 @@ namespace Nez
 				//		- or it is a SceneTransition that has already switched to the new Scene (the new Scene needs to do its thing)
 				if (_sceneTransition == null ||
 				    (_sceneTransition != null &&
-				     (!_sceneTransition._loadsNewScene || _sceneTransition._isNewSceneLoaded)))
+				     (!_sceneTransition._loadsNewScene || _sceneTransition.IsNewSceneLoaded)))
 				{
 					_scene.Update();
 				}
@@ -298,7 +298,7 @@ namespace Nez
 					_scene.PostRender(_sceneTransition.PreviousSceneRender);
 					StartCoroutine(_sceneTransition.OnBeginTransition());
 				}
-				else if (_scene != null && _sceneTransition._isNewSceneLoaded)
+				else if (_scene != null && _sceneTransition.IsNewSceneLoaded)
 				{
 					_scene.Render();
 					_scene.PostRender();

@@ -82,7 +82,7 @@ namespace Nez
 		/// use this for two part transitions. For example, a fade would fade to black first then when _isNewSceneLoaded becomes true it would
 		/// fade in. For in-Scene transitions _isNewSceneLoaded should be set to true at the midpoint just as if a new Scene was loaded.
 		/// </summary>
-		internal bool _isNewSceneLoaded;
+		public bool IsNewSceneLoaded;
 
 
 		protected SceneTransition(bool wantsPreviousSceneRender = true) : this(null, wantsPreviousSceneRender)
@@ -108,7 +108,7 @@ namespace Nez
 			// if we arent loading a new scene we just set the flag as if we did so that the 2 phase transitions complete
 			if (!_loadsNewScene)
 			{
-				_isNewSceneLoaded = true;
+				IsNewSceneLoaded = true;
 				yield break;
 			}
 
@@ -125,18 +125,18 @@ namespace Nez
 					Core.Schedule(0, false, null, timer =>
 					{
 						Core.Scene = scene;
-						_isNewSceneLoaded = true;
+						IsNewSceneLoaded = true;
 					});
 				});
 			}
 			else
 			{
 				Core.Scene = sceneLoadAction();
-				_isNewSceneLoaded = true;
+				IsNewSceneLoaded = true;
 			}
 
 			// wait for the scene to load if it was loaded on a background thread
-			while (!_isNewSceneLoaded)
+			while (!IsNewSceneLoaded)
 				yield return null;
 		}
 

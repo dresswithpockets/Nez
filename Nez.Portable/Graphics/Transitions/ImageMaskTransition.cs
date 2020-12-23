@@ -171,7 +171,7 @@ namespace Nez
 			Core.GraphicsDevice.SetRenderTarget(null);
 
 			// if we are scaling out we dont need to render the previous scene anymore since we want the new scene to be visible
-			if (!_isNewSceneLoaded)
+			if (!IsNewSceneLoaded)
 			{
 				batcher.Begin(BlendState.Opaque, Core.DefaultSamplerState, DepthStencilState.None, null);
 				batcher.Draw(PreviousSceneRender, Vector2.Zero, Color.White);
